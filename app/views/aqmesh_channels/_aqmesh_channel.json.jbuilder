@@ -1,0 +1,2 @@
+json.extract! aqmesh_channel, :id, :aqmesh_datum_id, :pre_scaled, :scaled, :final, :offset, :slope, :status, :unit, :sensor, :label, :created_at, :updated_at
+json.url aqmesh_channel_url(aqmesh_channel, format: :json)

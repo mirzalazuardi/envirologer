@@ -1,0 +1,61 @@
+<%= form_for(@aqmesh_datum) do |f| %>
+  <% if @aqmesh_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aqmesh_datum.errors.count, "error") %> prohibited this aqmesh_datum from being saved:</h2>
+
+      <ul>
+      <% @aqmesh_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :timestamp %><br>
+    <%= f.text_field :timestamp %>
+  </div>
+  <div class="field">
+    <%= f.label :display_type %><br>
+    <%= f.text_field :display_type %>
+  </div>
+  <div class="field">
+    <%= f.label :battery %><br>
+    <%= f.text_field :battery %>
+  </div>
+  <div class="field">
+    <%= f.label :particle_protocol %><br>
+    <%= f.text_field :particle_protocol %>
+  </div>
+  <div class="field">
+    <%= f.label :gas_protocol %><br>
+    <%= f.text_field :gas_protocol %>
+  </div>
+  <div class="field">
+    <%= f.label :P1 %><br>
+    <%= f.text_field :P1 %>
+  </div>
+  <div class="field">
+    <%= f.label :P2 %><br>
+    <%= f.text_field :P2 %>
+  </div>
+  <div class="field">
+    <%= f.label :P3 %><br>
+    <%= f.text_field :P3 %>
+  </div>
+  <div class="field">
+    <%= f.label :T1 %><br>
+    <%= f.text_field :T1 %>
+  </div>
+  <div class="field">
+    <%= f.label :T2 %><br>
+    <%= f.text_field :T2 %>
+  </div>
+  <div class="field">
+    <%= f.label :T3 %><br>
+    <%= f.text_field :T3 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

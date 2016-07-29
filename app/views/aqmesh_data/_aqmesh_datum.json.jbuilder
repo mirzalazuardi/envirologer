@@ -1,0 +1,2 @@
+json.extract! aqmesh_datum, :id, :timestamp, :display_type, :battery, :particle_protocol, :gas_protocol, :P1, :P2, :P3, :T1, :T2, :T3, :created_at, :updated_at
+json.url aqmesh_datum_url(aqmesh_datum, format: :json)

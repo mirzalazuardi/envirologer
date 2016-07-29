@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Aqmesh Channels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aqmesh datum</th>
+      <th>Pre scaled</th>
+      <th>Scaled</th>
+      <th>Final</th>
+      <th>Offset</th>
+      <th>Slope</th>
+      <th>Status</th>
+      <th>Unit</th>
+      <th>Sensor</th>
+      <th>Label</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aqmesh_channels.each do |aqmesh_channel| %>
+      <tr>
+        <td><%= aqmesh_channel.aqmesh_datum %></td>
+        <td><%= aqmesh_channel.pre_scaled %></td>
+        <td><%= aqmesh_channel.scaled %></td>
+        <td><%= aqmesh_channel.final %></td>
+        <td><%= aqmesh_channel.offset %></td>
+        <td><%= aqmesh_channel.slope %></td>
+        <td><%= aqmesh_channel.status %></td>
+        <td><%= aqmesh_channel.unit %></td>
+        <td><%= aqmesh_channel.sensor %></td>
+        <td><%= aqmesh_channel.label %></td>
+        <td><%= link_to 'Show', aqmesh_channel %></td>
+        <td><%= link_to 'Edit', edit_aqmesh_channel_path(aqmesh_channel) %></td>
+        <td><%= link_to 'Destroy', aqmesh_channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aqmesh channel', new_aqmesh_channel_path %>

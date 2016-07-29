@@ -1,0 +1,1 @@
+json.partial! "aqmesh_channels/aqmesh_channel", aqmesh_channel: @aqmesh_channel

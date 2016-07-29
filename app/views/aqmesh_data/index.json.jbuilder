@@ -1,0 +1,1 @@
+json.array! @aqmesh_data, partial: 'aqmesh_data/aqmesh_datum', as: :aqmesh_datum

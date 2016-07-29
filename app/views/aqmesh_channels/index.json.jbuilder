@@ -1,0 +1,1 @@
+json.array! @aqmesh_channels, partial: 'aqmesh_channels/aqmesh_channel', as: :aqmesh_channel

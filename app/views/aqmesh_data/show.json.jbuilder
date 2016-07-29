@@ -1,0 +1,1 @@
+json.partial! "aqmesh_data/aqmesh_datum", aqmesh_datum: @aqmesh_datum

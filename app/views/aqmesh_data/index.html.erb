@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Aqmesh Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Display type</th>
+      <th>Battery</th>
+      <th>Particle protocol</th>
+      <th>Gas protocol</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>T1</th>
+      <th>T2</th>
+      <th>T3</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aqmesh_data.each do |aqmesh_datum| %>
+      <tr>
+        <td><%= aqmesh_datum.timestamp %></td>
+        <td><%= aqmesh_datum.display_type %></td>
+        <td><%= aqmesh_datum.battery %></td>
+        <td><%= aqmesh_datum.particle_protocol %></td>
+        <td><%= aqmesh_datum.gas_protocol %></td>
+        <td><%= aqmesh_datum.P1 %></td>
+        <td><%= aqmesh_datum.P2 %></td>
+        <td><%= aqmesh_datum.P3 %></td>
+        <td><%= aqmesh_datum.T1 %></td>
+        <td><%= aqmesh_datum.T2 %></td>
+        <td><%= aqmesh_datum.T3 %></td>
+        <td><%= link_to 'Show', aqmesh_datum %></td>
+        <td><%= link_to 'Edit', edit_aqmesh_datum_path(aqmesh_datum) %></td>
+        <td><%= link_to 'Destroy', aqmesh_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aqmesh datum', new_aqmesh_datum_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @station.name %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @station.serial_number %>
+</p>
+
+<p>
+  <strong>Server:</strong>
+  <%= @station.server %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @station.type %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @station.active %>
+</p>
+
+<p>
+  <strong>External:</strong>
+  <%= @station.external %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @station.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @station.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_station_path(@station) %> |
+<%= link_to 'Back', stations_path %>

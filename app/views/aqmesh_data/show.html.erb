@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @aqmesh_datum.timestamp %>
+</p>
+
+<p>
+  <strong>Display type:</strong>
+  <%= @aqmesh_datum.display_type %>
+</p>
+
+<p>
+  <strong>Battery:</strong>
+  <%= @aqmesh_datum.battery %>
+</p>
+
+<p>
+  <strong>Particle protocol:</strong>
+  <%= @aqmesh_datum.particle_protocol %>
+</p>
+
+<p>
+  <strong>Gas protocol:</strong>
+  <%= @aqmesh_datum.gas_protocol %>
+</p>
+
+<p>
+  <strong>P1:</strong>
+  <%= @aqmesh_datum.P1 %>
+</p>
+
+<p>
+  <strong>P2:</strong>
+  <%= @aqmesh_datum.P2 %>
+</p>
+
+<p>
+  <strong>P3:</strong>
+  <%= @aqmesh_datum.P3 %>
+</p>
+
+<p>
+  <strong>T1:</strong>
+  <%= @aqmesh_datum.T1 %>
+</p>
+
+<p>
+  <strong>T2:</strong>
+  <%= @aqmesh_datum.T2 %>
+</p>
+
+<p>
+  <strong>T3:</strong>
+  <%= @aqmesh_datum.T3 %>
+</p>
+
+<%= link_to 'Edit', edit_aqmesh_datum_path(@aqmesh_datum) %> |
+<%= link_to 'Back', aqmesh_data_path %>

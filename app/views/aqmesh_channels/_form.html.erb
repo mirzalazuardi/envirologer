@@ -1,0 +1,57 @@
+<%= form_for(@aqmesh_channel) do |f| %>
+  <% if @aqmesh_channel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aqmesh_channel.errors.count, "error") %> prohibited this aqmesh_channel from being saved:</h2>
+
+      <ul>
+      <% @aqmesh_channel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :aqmesh_datum_id %><br>
+    <%= f.text_field :aqmesh_datum_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pre_scaled %><br>
+    <%= f.text_field :pre_scaled %>
+  </div>
+  <div class="field">
+    <%= f.label :scaled %><br>
+    <%= f.text_field :scaled %>
+  </div>
+  <div class="field">
+    <%= f.label :final %><br>
+    <%= f.text_field :final %>
+  </div>
+  <div class="field">
+    <%= f.label :offset %><br>
+    <%= f.text_field :offset %>
+  </div>
+  <div class="field">
+    <%= f.label :slope %><br>
+    <%= f.text_field :slope %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br>
+    <%= f.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= f.label :sensor %><br>
+    <%= f.text_field :sensor %>
+  </div>
+  <div class="field">
+    <%= f.label :label %><br>
+    <%= f.text_field :label %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
