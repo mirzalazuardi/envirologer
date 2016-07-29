@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'aqmesh_data/grab' => 'aqmesh_data#grab'
   resources :aqmesh_channels
   resources :aqmesh_data
   get 'units/grab' => 'units#grab'
