@@ -25,5 +25,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Sensor', new_sensor_path %>
+<%= paginate @sensors %>
+<br>
+<%= link_to 'New Sensor', new_sensor_path, class: ['btn', 'btn-info'] %>
