@@ -18,5 +18,7 @@
 //= require plugins/fastclick/fastclick
 //= require dist/js/app.min
 //= require dist/js/demo 
+//= require chartjs/chart
+//= require chartkick
 //  require_tree .
 
