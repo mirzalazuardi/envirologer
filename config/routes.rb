@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboards' => 'dashboards#index'
+
   get 'aqmesh_data/grab' => 'aqmesh_data#grab'
   resources :aqmesh_channels
   resources :aqmesh_data
