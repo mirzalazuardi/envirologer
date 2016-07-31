@@ -2,7 +2,7 @@
 
 <h1>Listing Aqmesh Channels</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Aqmesh datum</th>
@@ -22,7 +22,7 @@
   <tbody>
     <% @aqmesh_channels.each do |aqmesh_channel| %>
       <tr>
-        <td><%= aqmesh_channel.aqmesh_datum %></td>
+        <td><%= aqmesh_channel.aqmesh_datum.timestamp %></td>
         <td><%= aqmesh_channel.pre_scaled %></td>
         <td><%= aqmesh_channel.scaled %></td>
         <td><%= aqmesh_channel.final %></td>
