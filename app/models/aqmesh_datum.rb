@@ -2,7 +2,7 @@ class AqmeshDatum < ActiveRecord::Base
   has_many :aqmesh_channels
   validates :timestamp, uniqueness: true
 
-  def self.grab(g)
+  def self.grab_to_db(g)
 
     g.each do |e|
       timestamp = e["Timestamp"]
