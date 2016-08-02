@@ -46,3 +46,4 @@ group :development do
 end
 gem 'kaminari'
 gem 'chartkick'
+gem 'whenever', require: false
