@@ -34,7 +34,8 @@ class AqmeshDatum < ActiveRecord::Base
     end
   end
 
-  def self.latest_timestamp(n)
-
+  def self.latest_timestamp(n) 
+    last(n).map(&:timestamp)
   end
+  
 end
