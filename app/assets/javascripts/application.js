@@ -22,3 +22,5 @@
 //= require chartkick
 //  require_tree .
 
+//var randomnum = function() { return Math.floor(Math.random()*(10-0+1)+0) }
+//window.setInterval(function(){ console.log(randomnum())},5*1000)

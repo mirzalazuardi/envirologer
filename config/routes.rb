@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'dashboards' => 'dashboards#index'
 
   get 'aqmesh_data/grab' => 'aqmesh_data#grab'
