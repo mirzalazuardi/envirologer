@@ -1,4 +1,5 @@
 class AqmeshChannelsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_aqmesh_channel, only: [:show, :edit, :update, :destroy]
 
   # GET /aqmesh_channels

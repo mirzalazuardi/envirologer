@@ -1,4 +1,5 @@
 class StationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_station, only: [:show, :edit, :update, :destroy]
 
   # GET /stations

@@ -1,4 +1,5 @@
 class AqmeshDataController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_aqmesh_datum, only: [:show, :edit, :update, :destroy]
 
   # GET /aqmesh_data
