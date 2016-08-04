@@ -62,6 +62,11 @@ class AqmeshChannelsController < ApplicationController
     end
   end
 
+  def latest_final
+    data = AqmeshChannel.latest_final_by_label(params[:n],params[:label].upcase) 
+    render json: data
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_aqmesh_channel
