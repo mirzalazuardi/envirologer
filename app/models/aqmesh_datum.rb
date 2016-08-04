@@ -26,7 +26,7 @@ class AqmeshDatum < ActiveRecord::Base
         status     = f["Status"]
         unit       = f["Unit"]
         sensor     = f["Sensor"]
-        label      = f["Label"]
+        label      = (f["Label"]).strip
         
         AqmeshChannel.create!(aqmesh_datum_id: datum_item.id,pre_scaled: pre_scaled, scaled: scaled, final: final, offset: offset, slope: slope, status: status, unit: unit, sensor: sensor, label: label)
       end
