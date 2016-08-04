@@ -1,15 +1,14 @@
-<h1>Dashboard</h1>
-<%# @last_data.each_slice(4) do |a|%>
+<h1>Dashboard<sub>last updated <%= @channels.first.aqmesh_datum.timestamp.to_datetime.strftime("%d %b %Y %H:%M") %></sub></h1>
+<% @channels.each_slice(4) do |a|%>
   <div class="row">
-    <%# for item in a %>
+    <%  for i in a %>
     <div class="col-lg-3 col-xs-6">
       <!-- small box -->
-      <!-- aqua,green,yellow,red,black,purple,blue,navy -->
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>9999<%#= @last_data.final %></h3>
+          <h3><%= i.final %></h3>
 
-          <p>label<%#= @last_data.label %></p>
+          <p><%= i.label %></p>
         </div>
         <div class="icon">
           <!--<i class="ion ion-bag"></i>-->
@@ -18,6 +17,6 @@
       </div>
     </div>
     <!-- ./col -->
-    <%# end %>
+    <% end %>
   </div>
-<%## end%>
+<% end %>
