@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> 
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%#= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   </head>
   <!-- ADD THE CLASS sidedar-collapse TO HIDE THE SIDEBAR PRIOR TO LOADING THE SITE -->
   <body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
@@ -631,6 +634,5 @@
     </div>
     <!-- ./wrapper -->
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

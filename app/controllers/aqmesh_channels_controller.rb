@@ -63,7 +63,7 @@ class AqmeshChannelsController < ApplicationController
   end
 
   def latest_final
-    data = AqmeshChannel.latest_final_by_label(params[:n],params[:label].upcase) 
+    data = AqmeshChannel.latest_final_by_label(params[:n],params[:label]) 
     render json: data
   end
 
