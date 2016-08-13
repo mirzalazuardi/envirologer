@@ -14,9 +14,9 @@ class Grab
   end
 
   def aqmeshdata_to_db(g)
-    aqmdata = AqmeshDatum.new
 
     g.each do |e|
+      aqmdata = AqmeshDatum.new
       aqmdata.timestamp = e["Timestamp"]
       aqmdata.display_type = e["DisplayType"]
       aqmdata.battery = e["Battery"]
