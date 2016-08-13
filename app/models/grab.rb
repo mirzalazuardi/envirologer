@@ -13,4 +13,46 @@ class Grab
     JSON.parse(content)
   end
 
+  def aqmeshdata_to_db(g)
+    aqmdata = AqmeshDatum.new
+
+    g.each do |e|
+      aqmdata.timestamp = e["Timestamp"]
+      aqmdata.display_type = e["DisplayType"]
+      aqmdata.battery = e["Battery"]
+      aqmdata.particle_protocol = e["ParticleProtocol"]
+      aqmdata.gas_protocol = e["GasProtocol"]
+      aqmdata.P1 = e["P1"]
+      aqmdata.P2 = e["P2"]
+      aqmdata.P3 = e["P3"]
+      aqmdata.T1 = e["T1"]
+      aqmdata.T2 = e["T2"]
+      aqmdata.T3 = e["T3"]
+
+      if aqmdata.save 
+
+        e["Channels"].each do |f| 
+          pre_scaled = f["PreScaled"]
+          scaled     = f["Scaled"]
+          final      = f["Final"]
+          offset     = f["Offset"]
+          slope      = f["Slope"]
+          status     = f["Status"]
+          unit       = f["Unit"]
+          sensor     = f["Sensor"]
+          label      = f["Label"]
+          
+          AqmeshChannel.create!(aqmesh_datum_id: aqmdata.id,pre_scaled: pre_scaled, scaled: scaled, final: final, offset: offset, slope: slope, status: status, unit: unit, sensor: sensor, label: label.strip) 
+        end
+
+        p '========================= saved ==========================='
+
+      else 
+        p 'xxxxxxxxxxxxxxxxxxxxxxxxxx skipped xxxxxxxxxxxxxxxxxxxxxxxx' 
+      end
+
+    end
+
+  end
+
 end
