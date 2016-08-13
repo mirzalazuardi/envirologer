@@ -17,7 +17,7 @@ class DashboardsController < ApplicationController
     def set_chart_data
       label       = ['no','no2','co','so2','o3','temp','ap','hum']
       data        = PrepareDataChart.new
-      @chartdata  = data.latest(5,label)
+      @chartdata  = data.latest(20,label)
     end
 
 end
