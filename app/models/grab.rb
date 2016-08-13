@@ -45,10 +45,10 @@ class Grab
           AqmeshChannel.create!(aqmesh_datum_id: aqmdata.id,pre_scaled: pre_scaled, scaled: scaled, final: final, offset: offset, slope: slope, status: status, unit: unit, sensor: sensor, label: label.strip) 
         end
 
-        p '========================= saved ==========================='
+        p "========================= saved #{e['Timestamp']} ==========================="
 
       else 
-        p 'xxxxxxxxxxxxxxxxxxxxxxxxxx skipped xxxxxxxxxxxxxxxxxxxxxxxx' 
+        p "xxxxxxxxxxxxxxxxxxxxxxxxxx skipped #{e['Timestamp']} xxxxxxxxxxxxxxxxxxxxxxxx" 
       end
 
     end
