@@ -22,4 +22,11 @@
 <% end %>
 <h2>Chart</h2>
 <%= line_chart dashboards_latest_chart_data_path %>
-<div id="chart-1" style="height: 300px;"></div>
+<%= line_chart latest_chart_component_data_path('no') %>
+<%= line_chart latest_chart_component_data_path('no2') %>
+<%= line_chart latest_chart_component_data_path('co') %>
+<%= line_chart latest_chart_component_data_path('so2') %>
+<%= line_chart latest_chart_component_data_path('o3') %>
+<%= line_chart latest_chart_component_data_path('temp') %>
+<%= line_chart latest_chart_component_data_path('ap') %>
+<%= line_chart latest_chart_component_data_path('hum') %>

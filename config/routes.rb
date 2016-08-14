@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'dashboards' => 'dashboards#index'
   get  'dashboards/latest_chart_data' => 'dashboards#latest_chart_data'
+  get  'dashboards/latest/:component' => 'dashboards#latest_chart_channel_component_data', as: :latest_chart_component_data
   get 'aqmesh_data/grab' => 'aqmesh_data#grab'
   get 'aqmesh_data/latest_timestamp/:n' => 'aqmesh_data#latest_timestamp'
   get 'aqmesh_channels/latest/:n/:label' => 'aqmesh_channels#latest_final'
