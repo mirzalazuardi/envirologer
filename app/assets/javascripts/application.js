@@ -20,6 +20,7 @@
 //= require dist/js/demo 
 //= require highcharts
 //= require chartkick
+//= require gmap3.min
 //= require dashboards
 //  require_tree .
 
