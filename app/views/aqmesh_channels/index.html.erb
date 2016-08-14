@@ -2,7 +2,7 @@
 
 <h1>Listing Aqmesh Channels</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Aqmesh datum</th>
@@ -41,5 +41,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Aqmesh channel', new_aqmesh_channel_path %>
+<%= paginate @aqmesh_channels %>
+<br>
+<%= link_to 'New Aqmesh channel', new_aqmesh_channel_path, class: %w{btn btn-primary} %>

@@ -5,7 +5,7 @@ class AqmeshDataController < ApplicationController
   # GET /aqmesh_data
   # GET /aqmesh_data.json
   def index
-    @aqmesh_data = AqmeshDatum.all
+    @aqmesh_data = AqmeshDatum.page params[:page]
   end
 
   # GET /aqmesh_data/1

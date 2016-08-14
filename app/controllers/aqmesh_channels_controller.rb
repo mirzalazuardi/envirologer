@@ -5,7 +5,7 @@ class AqmeshChannelsController < ApplicationController
   # GET /aqmesh_channels
   # GET /aqmesh_channels.json
   def index
-    @aqmesh_channels = AqmeshChannel.all
+    @aqmesh_channels = AqmeshChannel.page params[:page]
   end
 
   # GET /aqmesh_channels/1

@@ -2,7 +2,7 @@
 
 <h1>Listing Aqmesh Data</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Timestamp</th>
@@ -43,5 +43,7 @@
 </table>
 
 <br>
+<%= paginate @aqmesh_data %>
+<br>
 
-<%= link_to 'New Aqmesh datum', new_aqmesh_datum_path %>
+<%= link_to 'New Aqmesh datum', new_aqmesh_datum_path, class: %w{btn btn-primary} %>

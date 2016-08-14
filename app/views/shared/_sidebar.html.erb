@@ -28,16 +28,29 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
+      <li>
+        <%= link_to dashboards_path do %>
+          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        <% end %>
+      </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          <i class="fa fa-th"></i> <span>Master</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-          <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          <li>
+            <%= link_to aqmesh_data_path do %>
+              <i class="fa fa-circle-o"></i> Aqmesh Data
+            <% end %>
+          </li> 
+          <li>
+            <%= link_to aqmesh_channels_path do %>
+              <i class="fa fa-circle-o"></i> Aqmesh Channels
+            <% end %>
+          </li>
         </ul>
       </li>
       <!--<li class="treeview active">
@@ -56,14 +69,6 @@
           </li>
         </ul>
       </li>-->            
-      <li>
-        <a href="../widgets.html">
-          <i class="fa fa-th"></i> <span>Widgets</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">new</small>
-          </span>
-        </a>
-      </li>
       <!--<li class="treeview">
         <a href="#">
           <i class="fa fa-pie-chart"></i>
