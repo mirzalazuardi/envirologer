@@ -17,6 +17,16 @@ class AqmeshDataController < ApplicationController
   # GET /aqmesh_data/1
   # GET /aqmesh_data/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name_of_your_choice",
+               layout: pdf.html.erb
+               #template: "aqmesh_data/show.pdf.erb",
+               locals: {:aqmesh_datum => @aqmesh_datum}
+      end
+    end
+    
   end
 
   # GET /aqmesh_data/new

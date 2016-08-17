@@ -49,3 +49,5 @@ gem 'kaminari'
 gem 'chartkick'
 gem 'whenever', require: false
 gem 'devise'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
