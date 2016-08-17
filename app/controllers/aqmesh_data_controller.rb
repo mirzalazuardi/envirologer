@@ -6,10 +6,11 @@ class AqmeshDataController < ApplicationController
   # GET /aqmesh_data.json
   def index
     @aqmesh_data = AqmeshDatum.page params[:page]
+    @aqmesh_data_order = AqmeshDatum.order(timestamp: :desc)
     respond_to do |format|
       format.html
-      format.csv { send_data @aqmesh_data.to_csv }
-      format.xls { send_data @aqmesh_data.to_csv(col_sep: "\t") }
+      format.csv { send_data @aqmesh_data_order.to_csv }
+      format.xls { send_data @aqmesh_data_order.to_csv(col_sep: "\t") }
     end
   end
 
