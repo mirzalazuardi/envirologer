@@ -21,9 +21,9 @@ class AqmeshDataController < ApplicationController
       format.html
       format.pdf do
         render pdf: "file_name_of_your_choice",
-               layout: pdf.html.erb
+               layout: 'pdf.html.erb',
                #template: "aqmesh_data/show.pdf.erb",
-               locals: {:aqmesh_datum => @aqmesh_datum}
+               locals: {aqmesh_datum:  @aqmesh_datum}
       end
     end
     
