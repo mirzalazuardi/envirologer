@@ -6,6 +6,13 @@ class AqmeshChannelsController < ApplicationController
   # GET /aqmesh_channels.json
   def index
     @aqmesh_channels = AqmeshChannel.page params[:page]
+    @aqmesh_channels_order = AqmeshChannel.order(aqmesh_datum_id: :desc)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @aqmesh_channels_order.to_csv }
+      format.xls { send_data @aqmesh_channels_order.to_csv(col_sep: "\t") }
+    end
+
   end
 
   # GET /aqmesh_channels/1
