@@ -16,6 +16,8 @@ module DashboardsHelper
       indicator_color(value,41,81,381,801,1600)
     elsif label.upcase == 'CO' 
       indicator_color(value,1.1,2.1,10,17,34)
+    elsif label.upcase == 'NO2' 
+      indicator_color(value,41,81,181,281,400)
     end
   end
 
