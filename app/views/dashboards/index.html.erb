@@ -4,7 +4,7 @@
     <%  for i in a %>
     <div class="col-lg-3 col-xs-6">
       <!-- small box -->
-      <div class="small-box bg-<%= indicator_color(i.label,i.final) %>">
+      <div class="small-box bg-<%= set_indicator_for(i.label,i.final) %>">
         <div class="inner">
           <h3><%= i.final %></h3>
 
