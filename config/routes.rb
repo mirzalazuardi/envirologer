@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'dashboards' => 'dashboards#index'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
+  get 'dashboards' => 'dashboards#index', as: :dashboards
   get  'dashboards/latest_chart_data' => 'dashboards#latest_chart_data'
   get  'dashboards/latest/:component' => 'dashboards#latest_chart_channel_component_data', as: :latest_chart_component_data
   get 'aqmesh_data/grab' => 'aqmesh_data#grab'

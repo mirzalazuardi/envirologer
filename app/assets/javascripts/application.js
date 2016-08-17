@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require plugins/jQuery/jquery-2.2.3.min
+//  require plugins/jQuery/jquery-2.2.3.min
 //= require jquery_ujs
 //= require turbolinks
 //  require bootstrap/bootstrap.min
@@ -20,9 +20,11 @@
 //= require dist/js/demo 
 //= require highcharts
 //= require chartkick
-//= require gmap3.min
 //= require dashboards
 //  require_tree .
 
 //var randomnum = function() { return Math.floor(Math.random()*(10-0+1)+0) }
 //window.setInterval(function(){ console.log(randomnum())},5*1000)
+function initMap() {
+    
+}

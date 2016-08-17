@@ -16,3 +16,7 @@
  *=  require dist/css/AdminLTE.min
  *=  require dist/css/skins/_all-skins.min
  */
+#my_map{
+    width: 870px;
+    height: 570px;
+ }
