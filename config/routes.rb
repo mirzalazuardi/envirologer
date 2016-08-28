@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'latest' => 'publicvars#latest'
+
   devise_for :users
   devise_scope :user do
     root to: "devise/sessions#new"
