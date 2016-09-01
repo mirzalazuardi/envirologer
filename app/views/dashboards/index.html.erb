@@ -19,14 +19,39 @@
     <% end %>
   </div>
 <% end %>
-<div id="my_map"></div>
+<div id="my_map" style="width:1200px;height:380px;"></div>
 <h2>Chart</h2>
-<%= line_chart dashboards_latest_chart_data_path %>
-<%= line_chart latest_chart_component_data_path('no') %>
-<%= line_chart latest_chart_component_data_path('no2') %>
-<%= line_chart latest_chart_component_data_path('co') %>
-<%= line_chart latest_chart_component_data_path('so2') %>
-<%= line_chart latest_chart_component_data_path('o3') %>
-<%= line_chart latest_chart_component_data_path('temp') %>
-<%= line_chart latest_chart_component_data_path('ap') %>
+<%= line_chart dashboards_latest_chart_data_path %><br>
+<%= line_chart latest_chart_component_data_path('no') %><br>
+<%= line_chart latest_chart_component_data_path('no2') %><br>
+<%= line_chart latest_chart_component_data_path('co') %><br>
+<%= line_chart latest_chart_component_data_path('so2') %><br>
+<%= line_chart latest_chart_component_data_path('o3') %><br>
+<%= line_chart latest_chart_component_data_path('temp') %><br>
+<%= line_chart latest_chart_component_data_path('ap') %><br>
 <%= line_chart latest_chart_component_data_path('hum') %>
+
+<% content_for :ext_scripts do %>
+  <script type="text/javascript" charset="utf-8">
+    var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+    function initialize()
+    {
+    var mapProp = {
+      center:myCenter,
+      zoom:5,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+
+    var map=new google.maps.Map(document.getElementById("my_map"),mapProp);
+
+    var marker=new google.maps.Marker({
+      position:myCenter,
+      });
+
+    marker.setMap(map);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+<% end %>

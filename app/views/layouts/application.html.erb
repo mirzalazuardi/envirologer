@@ -18,9 +18,9 @@
     <%#= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>-->
     
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJQx1BmYiSORsZl5bCTpSXAjSESF1yfl8&callback=initMap" type="text/javascript"></script>
-    <%= javascript_include_tag 'gmap3.min', :cache => true %>  
+    <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=#{GOOGLE_MAP_API_KEY}", :cache => true %>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJQx1BmYiSORsZl5bCTpSXAjSESF1yfl8&callback=initMap" type="text/javascript"></script>-->
+    <%# javascript_include_tag 'gmap3.min', :cache => true %>  
   </head>
   <!-- ADD THE CLASS sidedar-collapse TO HIDE THE SIDEBAR PRIOR TO LOADING THE SITE -->
   <body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
@@ -57,33 +57,6 @@
 
         <!-- Main Content -->
         <section class="content">
-          <!--<div class="callout callout-info">
-            <h4>Tip!</h4>
-
-            <p>Add the sidebar-collapse class to the body tag to get this layout. You should combine this option with a
-            fixed layout if you have a long sidebar. Doing that will prevent your page content from getting stretched
-            vertically.</p>
-          </div>-->
-          <!-- Default box -->
-          <!--<div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">Title</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              Start creating your amazing application!
-            </div>
-            <div class="box-footer">
-              Footer
-            </div>
-          </div>-->
-          <!-- /.box -->
           <%= yield %>
         </section>
         <!-- /.content -->
@@ -293,6 +266,7 @@
         <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
+    <%= yield :ext_scripts %>
 
   </body>
 </html>
