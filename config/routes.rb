@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'latest' => 'publicvars#latest'
+  get 'latest/:station_number' => 'publicvars#latest'
 
   devise_for :users
   devise_scope :user do
