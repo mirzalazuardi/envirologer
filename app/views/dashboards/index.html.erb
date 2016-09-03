@@ -33,7 +33,7 @@
 
 <% content_for :ext_scripts do %>
   <script type="text/javascript" charset="utf-8">
-  var myCenter=new google.maps.LatLng(<%= @details.last.station.latitude %>,<%= @details.last.station.longitude %>);
+  var myCenter=new google.maps.LatLng(<%= @stations.last.latitude %>,<%= @stations.last.longitude %>);
 
     function initialize()
     {

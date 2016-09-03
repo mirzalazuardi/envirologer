@@ -1,11 +1,10 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_chart_data
+  before_action :set_chart_data, :stations_via_role_group 
 
   def index
-    @details = current_user.role.role_groups
-    stationId = @details.last.station_id
-    @channels = AqmeshDatum.where(station_id: stationId).last.aqmesh_channels
+    lastStationId = @stations.last.id
+    @channels = AqmeshDatum.where(station_id: lastStationId).last.aqmesh_channels
   end
 
   def latest_chart_data
@@ -27,6 +26,11 @@ class DashboardsController < ApplicationController
       data        = PrepareDataChart.new
       @chartdata  = data.latest(20,label) 
       @latest_channels   = AqmeshDatum.last.aqmesh_channels
+    end
+
+    def stations_via_role_group
+      details  = current_user.role.role_groups 
+      @stations = details.map { |x| x.station }
     end
 
 end
