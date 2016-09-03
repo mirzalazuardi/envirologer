@@ -1,5 +1,6 @@
 class AqmeshDatum < ActiveRecord::Base
   has_many :aqmesh_channels
+  belongs_to :station
   validates :timestamp, uniqueness: true
 
   def self.latest_timestamp(n) 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803125755) do
+ActiveRecord::Schema.define(version: 20160903072940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,8 +47,10 @@ ActiveRecord::Schema.define(version: 20160803125755) do
     t.string   "T3"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "station_id"
   end
 
+  add_index "aqmesh_data", ["station_id"], name: "index_aqmesh_data_on_station_id", using: :btree
   add_index "aqmesh_data", ["timestamp"], name: "index_aqmesh_data_on_timestamp", unique: true, using: :btree
 
   create_table "sensors", force: :cascade do |t|
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160803125755) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "number"
   end
 
   add_index "servers", ["name"], name: "index_servers_on_name", unique: true, using: :btree
@@ -79,6 +82,9 @@ ActiveRecord::Schema.define(version: 20160803125755) do
     t.float    "longitude"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "number"
+    t.string   "city"
+    t.string   "country"
   end
 
   add_index "stations", ["name"], name: "index_stations_on_name", unique: true, using: :btree
@@ -112,5 +118,6 @@ ActiveRecord::Schema.define(version: 20160803125755) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "aqmesh_channels", "aqmesh_data"
+  add_foreign_key "aqmesh_data", "stations"
   add_foreign_key "stations", "servers"
 end

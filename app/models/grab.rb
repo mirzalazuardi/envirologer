@@ -13,7 +13,7 @@ class Grab
     JSON.parse(content)
   end
 
-  def aqmeshdata_to_db(g)
+  def aqmeshdata_to_db(g,id)
 
     g.each do |e|
       aqmdata = AqmeshDatum.new
@@ -28,6 +28,7 @@ class Grab
       aqmdata.T1 = e["T1"]
       aqmdata.T2 = e["T2"]
       aqmdata.T3 = e["T3"]
+      aqmdata.station_id = id
 
       if aqmdata.save 
 
