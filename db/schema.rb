@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903072940) do
+ActiveRecord::Schema.define(version: 20160903091754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,23 @@ ActiveRecord::Schema.define(version: 20160903072940) do
   add_index "aqmesh_data", ["station_id"], name: "index_aqmesh_data_on_station_id", using: :btree
   add_index "aqmesh_data", ["timestamp"], name: "index_aqmesh_data_on_timestamp", unique: true, using: :btree
 
+  create_table "role_groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "role_id"
+    t.integer  "station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "role_groups", ["role_id"], name: "index_role_groups_on_role_id", using: :btree
+  add_index "role_groups", ["station_id"], name: "index_role_groups_on_station_id", using: :btree
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sensors", force: :cascade do |t|
     t.string   "name"
     t.string   "label"
@@ -85,6 +102,7 @@ ActiveRecord::Schema.define(version: 20160903072940) do
     t.integer  "number"
     t.string   "city"
     t.string   "country"
+    t.string   "timezone"
   end
 
   add_index "stations", ["name"], name: "index_stations_on_name", unique: true, using: :btree
@@ -112,12 +130,17 @@ ActiveRecord::Schema.define(version: 20160903072940) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   add_foreign_key "aqmesh_channels", "aqmesh_data"
   add_foreign_key "aqmesh_data", "stations"
+  add_foreign_key "role_groups", "roles"
+  add_foreign_key "role_groups", "stations"
   add_foreign_key "stations", "servers"
+  add_foreign_key "users", "roles"
 end

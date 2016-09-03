@@ -1,5 +1,13 @@
 Server.create(name:"server1", number: 150)
-Station.create!(name:  "Demo Pod", number: 67,serial_number:  "67150", server_id:  1, type:  "AQMeshPod", active:  true, external:  true, latitude:  52.20025, longitude:-1.72225, city: "London", country: "UK"  )
+station = Station.create!(name:  "Demo Pod", number: 67,serial_number:  "67150", server_id:  1, type:  "AQMeshPod", active:  true, external:  true, latitude:  52.20025, longitude:-1.72225, city: "London", country: "UK"  )
+
+roleAdmin = Role.create!(name: "Admin")
+roleClient = Role.create!(name: "Client")
+RoleGroup.create!(name: "demoAdmin", role_id: roleAdmin.id, station_id: station.id)
+RoleGroup.create!(name: "demoClient", role_id: roleClient.id, station_id: station.id)
+
+User.create!(email: "mirzalazuardi@gmail.com", password: '12345678', role_id: roleAdmin.id)
+User.create!(email: "dennygraph@gmail.com", password: '12345678', role_id: roleClient.id)
 #Sensor.create!(name: '', label: 'AETH_ZEROGP')
 #Sensor.create!(name: '0.25 um', label: 'GRIMMBIN1')
 #Sensor.create!(name: '0.28 um', label: 'GRIMMBIN2')
