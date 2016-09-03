@@ -7,6 +7,7 @@ RoleGroup.create!(name: "demoAdmin", role_id: roleAdmin.id, station_id: station.
 RoleGroup.create!(name: "demoClient", role_id: roleClient.id, station_id: station.id)
 
 User.create!(email: "mirzalazuardi@gmail.com", password: '12345678', role_id: roleAdmin.id)
+User.create!(email: "dedi.sitoho@gmail.com", password: '12345678', role_id: roleAdmin.id)
 User.create!(email: "dennygraph@gmail.com", password: '12345678', role_id: roleClient.id)
 #Sensor.create!(name: '', label: 'AETH_ZEROGP')
 #Sensor.create!(name: '0.25 um', label: 'GRIMMBIN1')
