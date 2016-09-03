@@ -3,8 +3,9 @@ class DashboardsController < ApplicationController
   before_action :set_chart_data
 
   def index
-
-    @channels = AqmeshDatum.last.aqmesh_channels
+    @details = current_user.role.role_groups
+    stationId = @details.last.station_id
+    @channels = AqmeshDatum.where(station_id: stationId).last.aqmesh_channels
   end
 
   def latest_chart_data
