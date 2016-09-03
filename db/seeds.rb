@@ -1,5 +1,5 @@
 Server.create(name:"server1", number: 150)
-station = Station.create!(name:  "Demo Pod", number: 67,serial_number:  "67150", server_id:  1, type:  "AQMeshPod", active:  true, external:  true, latitude:  52.20025, longitude:-1.72225, city: "London", country: "UK"  )
+station = Station.create!(name:  "Demo Pod", number: 67,serial_number:  "67150", server_id:  1, type:  "AQMeshPod", active:  true, external:  true, latitude:  52.20025, longitude:-1.72225, city: "London", country: "UK", timezone: "London") 
 
 roleAdmin = Role.create!(name: "Admin")
 roleClient = Role.create!(name: "Client")
