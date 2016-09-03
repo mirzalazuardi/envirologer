@@ -6,7 +6,7 @@
       <!-- small box -->
       <div class="small-box bg-<%= set_indicator_for(i.label,i.final) %>">
         <div class="inner">
-          <h3><%= "%2.2f" % i.final %> <sub><%= i.unit %></sub> </h3> 
+          <h3><%= ("%2.1f" % i.final).gsub(/\.0/,"") %> <sub><%= i.unit %></sub> </h3> 
           <p><%= i.label %></p>
         </div>
         <div class="icon">
