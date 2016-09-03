@@ -7,6 +7,8 @@ class PublicvarsController < ApplicationController
     @public_latest[:timestamp] = dt.timestamp
     @public_latest[:latitude] = dt.station.latitude
     @public_latest[:longitude] = dt.station.longitude
+    @public_latest[:city] = dt.station.city
+    @public_latest[:country] = dt.station.country
     @public_latest[:data] = latest_value
     render json: @public_latest
   end
